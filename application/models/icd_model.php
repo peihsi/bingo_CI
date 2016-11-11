@@ -21,7 +21,7 @@ class icd_model extends CI_Model{
                $this->db->where("(`category_outline` LIKE '%$multiple_key_words%' || `icd9_code` LIKE '%$multiple_key_words%' || `icd10_code` LIKE '%$multiple_key_words%' || `description` LIKE '%$multiple_key_words%' || `expiration` LIKE '%$multiple_key_words%')");
           }
           $this->db->from("icd_cm");
-          $this->db->limit(100);
+          $this->db->limit(20);
           $result = $this->db->get()->result_array();
           return $result;
      } 
